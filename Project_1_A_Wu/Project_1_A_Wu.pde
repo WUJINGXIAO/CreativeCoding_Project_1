@@ -1,5 +1,6 @@
 // This is the first and simplest draft
 // use functions later to improve 
+// test
 void setup(){
   size(800,800);
   background(212, 177, 106); // Warm pink background
