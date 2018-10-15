@@ -123,14 +123,8 @@ void balloon1(int r,int g, int b,int t1,int t2){
    fill(252,97,97);
    arc(200, 350, 200,90, 0, PI, OPEN);
    
-   // random jumping hair (inspired from sahanasri's robot's hair :)
-   fill(random(0,255),random(0,255),random(0,255));
+   // crown's body
    noStroke();
-   ellipse(random(100,350),random(100,200),30,30);
-   ellipse(random(100,350),random(100,200),40,40);
-   ellipse(random(100,350),random(100,200),20,20);
-   
-     // crown's body
    fill(random(150,255));
    rect(200,600,200,300,90);
    if (mouseX>100&&mouseX<299&&mouseY<751&&mouseY>451){ // getting fatter and fatter 
@@ -185,7 +179,12 @@ void balloon1(int r,int g, int b,int t1,int t2){
    fill(0);
    ellipse(257,218,45,45);
    ellipse(122,231,45,45);
-   
+   noFill();
+   stroke(255, 255, 108); 
+   for (int d = 100; d > 0; d -=10) {
+    ellipse(321, 148, d-random(0,10), d-random(0,10));
+     ellipse(35, 162, d+random(0,10), d+random(0,10));
+   }
    /*for(int i=0;i<20;i+=5){
    fill(59,29,153);
    ellipse(240+random(40),230+random(40),random(5),random(9));
