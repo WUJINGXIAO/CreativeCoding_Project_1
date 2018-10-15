@@ -7,6 +7,7 @@ void setup(){
   }
 void draw(){
   // This is a place for KiKi 
+  println(mouseX,mouseY);// to make calculation easier 
   frameRate(10);
   background(252, 197, 184);
   
@@ -23,8 +24,18 @@ void draw(){
   balloon2(171+mouseX,71,0+mouseY,90,70);// small trick
   balloon3(166,223,175);
   crown();
-   click();
+  click();
+  
+  if (mouseX<523&&mouseX>475&&mouseY<300&&mouseY>200){ // move your mouse to the balloon1
+  balloon1(252, 197, 184,0,0);
+  println("disappear");
+  
+ 
  }
+ }
+ 
+ 
+ 
   //Three beautiful balloons
 void balloon1(int r,int g, int b,int t1,int t2){
   noStroke();
@@ -80,11 +91,23 @@ void balloon1(int r,int g, int b,int t1,int t2){
    fill(255);
    ellipse(150,250,70,70);
    ellipse(250,250,70,70);
+   
    //crown's iris
    fill(0);
    noStroke();
-   ellipse(140,250,40,40);
-   ellipse(260,250,40,40);
+   ellipse(175,252,40,40);
+   ellipse(220,252,40,40);
+   if(mouseX<230&&mouseX>171&&mouseY<330&&mouseY>273){// move your mouse to his nose
+   strokeWeight(2);
+   stroke(0);
+   line(154,205,181,224);
+   line(244,205,218,224);
+   
+   line(199,179,199,110);
+   line(138,191,91,148);
+   line(257,192,312,152);
+  }
+  
    //crown's nose
    fill(255,0,70);
    noStroke();
@@ -95,18 +118,33 @@ void balloon1(int r,int g, int b,int t1,int t2){
    fill(198,59,23);
    ellipse(100,300,60,20);
    ellipse(300,300,60,20);
+   
    // his mouse
-   fill(255);
+   fill(252,97,97);
    arc(200, 350, 200,90, 0, PI, OPEN);
+   
    // random jumping hair (inspired from sahanasri's robot's hair :)
    fill(random(0,255),random(0,255),random(0,255));
    noStroke();
    ellipse(random(100,350),random(100,200),30,30);
    ellipse(random(100,350),random(100,200),40,40);
    ellipse(random(100,350),random(100,200),20,20);
-    // crown's body
-   fill(255);
-   rect(200,600,200,300);
+   
+     // crown's body
+   fill(random(150,255));
+   rect(200,600,200,300,90);
+   if (mouseX>100&&mouseX<299&&mouseY<751&&mouseY>451){ // getting fatter and fatter 
+     for (int b=200; b<400;b++){
+       fill(255);
+       rect(200,600,b,300,90);
+      }
+     fill(251, 191, 104);
+     ellipse(194,710,50,50);
+     fill(0);
+     stroke(0);
+     line(211,694,176,727);
+     line(175,696,210,727);
+   }
    // crown's bow tie
    rectMode(CENTER);
    fill(54,30,136);
@@ -118,24 +156,45 @@ void balloon1(int r,int g, int b,int t1,int t2){
    fill(138,120,201);
    triangle(250,600,200,500,250,400);
    popMatrix();
-   if(mouseX>400){
-   fill(252,97,97);
+   if(mouseX<300&&mouseX>101&&mouseY<400&&mouseY>351){ // lossing one teeth
+    
+   fill(255);
    arc(200, 350, 200,90, 0, PI, OPEN);
+   fill(0);
+   rect(202,372,20,45); // teeth
    }
-      //if statement press keys
-   if(key==CODED){
-   if(keyCode==UP){
-   fill(30,205,257);
-   noStroke();
-   ellipse(140,250,50,50);
+   //if statement press keys
    
-   }else if(keyCode==DOWN){
-   fill(255,151,53);
+   if(key==CODED){ // his hands hit himself
+   if(keyCode==UP){
+   stroke(0);
+   line(300,550,400,460);
    noStroke();
-   ellipse(260,250,60,60);
-   for(int i=0;i<20;i+=1){
+   fill(129, 15, 129);
+   ellipse(401,462,random(70),random(90));
+    }else if(keyCode==DOWN){
+   fill(79, 0, 79);
+   ellipse(279,402,80,80);
+   stroke(0);
+   line(300,550,279,400);
+  
+   fill(255);
+   noStroke();
+   ellipse(155,250,90,70);
+   ellipse(247,250,100,70);
+   fill(0);
+   ellipse(257,218,45,45);
+   ellipse(122,231,45,45);
+   
+   /*for(int i=0;i<20;i+=5){
    fill(59,29,153);
-   ellipse(240+random(40),230+random(40),8,8);
-   }}
+   ellipse(240+random(40),230+random(40),random(5),random(9));
+   }*/
+ }
     }
  }
+ 
+
+ 
+ 
+ 
