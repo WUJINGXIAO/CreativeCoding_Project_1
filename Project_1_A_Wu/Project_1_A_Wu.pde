@@ -1,15 +1,28 @@
-// This is the first and simplest draft
-// use functions later to improve 
-// test
+Balloon A;
+Balloon B;
+Balloon C;
+Balloon D;
+color skin;
 void setup(){
   size(800,800);
   background(212, 177, 106); // Warm pink background
+  A= new Balloon(500,random(245,250),50,100,27, 61, 132);
+  B= new Balloon(630,random(295,300),50,100,100,0,0);
+  C= new Balloon(608,random(152,160),50,100,227, 59, 59);
+  D= new Balloon(720,213,50,100,168, 225, 159);
+  
   }
 void draw(){
-  // This is a place for KiKi 
+  background(252, 197, 184);
+  A.display();
+  B.display();
+  C.display();
+  D.display();
+  A.eyes();
+   // This is a place for KiKi 
   println(mouseX,mouseY);// to make calculation easier 
   frameRate(10);
-  background(252, 197, 184);
+  
   
   for(int w=0; w<800; w+=50){
   for(int h=0; h<800; h+=50){ 
@@ -18,25 +31,19 @@ void draw(){
     ellipse(w,h,random(0,8),random(0,7)); 
  }
   }
+  /*
   balloon1(255,42,100,0,0);
   balloon1(212+mouseX,106+mouseY,106,80,-70);//small trick 
   balloon2(171,71,190,0,0);
   balloon2(171+mouseX,71,0+mouseY,90,70);// small trick
   balloon3(166,223,175);
+  */
   crown();
   click();
-  
-  if (mouseX<523&&mouseX>475&&mouseY<300&&mouseY>200){ // move your mouse to the balloon1
-  balloon1(252, 197, 184,0,0);
-  println("disappear");
-  
- 
  }
- }
- 
- 
  
   //Three beautiful balloons
+/*
 void balloon1(int r,int g, int b,int t1,int t2){
   noStroke();
   fill(r,g,b); //red
@@ -57,7 +64,8 @@ void balloon1(int r,int g, int b,int t1,int t2){
   ellipse(700,random(145,150),50,100);
   stroke(126);
   line(700,200,700,250);
-  }  
+  }
+  */
   void click(){
     if (mousePressed){
     // messed background
@@ -185,13 +193,7 @@ void balloon1(int r,int g, int b,int t1,int t2){
     ellipse(321, 148, d-random(0,10), d-random(0,10));
      ellipse(35, 162, d+random(0,10), d+random(0,10));
    }
-   /*for(int i=0;i<20;i+=5){
-   fill(59,29,153);
-   ellipse(240+random(40),230+random(40),random(5),random(9));
-   }*/
- }
-    }
- }
+ } } }
  
 
  
