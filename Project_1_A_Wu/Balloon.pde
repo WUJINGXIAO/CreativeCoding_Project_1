@@ -1,5 +1,4 @@
 class Balloon{
-  
   float x;
   float y;
   float w;
@@ -9,7 +8,6 @@ class Balloon{
   float b;
   
   Balloon(float x_,float y_,float w_,float l_,float r_,float g_,float b_){
-  
     x=x_;
     y=y_;
     w=w_;
@@ -33,6 +31,15 @@ class Balloon{
    fill(255);
    ellipse(596,random(120,153),20,70);
    ellipse(617,random(110,139),20,70);
-  }
+  }else if(mouseX<652&&mouseX>600&&mouseY<349&&mouseY>253){
+    fill(random(240,255));
+    ellipse(632,294,random(20,40),random(20,40));
+    }else if(mouseX<744&&mouseX>694&&mouseY<261&&mouseY>166){
+      stroke(0);
+      line(720,166,720,125);
+      noStroke();
+      fill(255);
+      ellipse(720,126,random(10,30),random(10,30));
+   }
  }
   }
